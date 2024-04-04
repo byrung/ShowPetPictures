@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ShowPetPictures</string>
+    <string name="textSelect">선 시</string>
+    <string name="checkStart">시작</string>
+    <string name="textfavorite">좋 애 완 </string>
+    <string name="radioDog">개</string>
+    <string name="radioCat">야옹</string>
+    <string name="radioBird">닭둘기</string>
+    <string name="btnDone">선택 완료</string>
+</resources>
