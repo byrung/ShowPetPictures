@@ -7,4 +7,7 @@
     <string name="radioCat">야옹</string>
     <string name="radioBird">닭둘기</string>
     <string name="btnDone">선택 완료</string>
+    <string name="radioGyodong">한교동</string>
+    <string name="btnFinish">종료</string>
+    <string name="btnInit">처음으로</string>
 </resources>

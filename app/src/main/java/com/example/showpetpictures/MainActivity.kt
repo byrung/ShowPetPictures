@@ -3,6 +3,8 @@ package com.example.showpetpictures
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.view.View.INVISIBLE
+import android.view.View.OnClickListener
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.ImageView
@@ -36,9 +38,19 @@ class MainActivity : AppCompatActivity() {
 
         btnDone.setOnClickListener {
             when(rg.checkedRadioButtonId){
-                R.id.Dog -> imgV.setImageResource(R.drawable.Dog)
-                R.id.Cat -> imgV.setImageResource(R.drawable.Cat)
-                R.id.Bird -> imgV.setImageResource(R.drawable.Bird)
+                R.id.Dog -> imgV.setImageResource(R.drawable.dog)
+                R.id.Cat -> imgV.setImageResource(R.drawable.cat)
+                R.id.Bird -> imgV.setImageResource(R.drawable.bird)
+            }
+        }
+    }
+
+    val btnListener = OnClickListener{
+        when(it.id){
+            R.id.btnFinish -> finish()
+            R.id.btnInit -> {
+                checkStart.isChecked = false
+                linearSub.visibility = INVISIBLE
             }
         }
     }
