@@ -24,13 +24,14 @@
     <LinearLayout
         android:id="@+id/linearSub"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="invisible">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/textFavorite"
+            android:text="@string/textfavorite"
             android:textSize="@dimen/textSizeLarge"/>
 
         <RadioGroup
@@ -39,22 +40,22 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/marginMedium">
             <RadioButton
-                android:id="@+id/radioPuppy"
+                android:id="@+id/radioDog"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/radioPuppy"
+                android:text="@string/radioDog"
                 android:textSize="@dimen/textSizeMedium"/>
             <RadioButton
-                android:id="@+id/radioKitty"
+                android:id="@+id/radioCat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/radioKitty"
+                android:text="@string/radioCat"
                 android:textSize="@dimen/textSizeMedium"/>
             <RadioButton
-                android:id="@+id/radioGyodong"
+                android:id="@+id/radioBird"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/radioGyodong"
+                android:text="@string/radioBird"
                 android:textSize="@dimen/textSizeMedium"/>
         </RadioGroup>
 
@@ -62,7 +63,7 @@
             android:id="@+id/imgV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/gyodong"
+            android:src="@drawable/bird"
             android:layout_marginBottom="@dimen/marginSmall"
             android:scaleType="fitXY"/>
         <Button

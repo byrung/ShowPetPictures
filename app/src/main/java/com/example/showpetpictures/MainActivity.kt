@@ -1,4 +1,4 @@
-package com.example.showpetpictures
+package kr.ac.kopo.showpetpictures
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,40 +9,59 @@ import android.widget.Button
 import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.RadioButton
 import android.widget.RadioGroup
+import android.widget.Switch
+import com.example.showpetpictures.R
 
 class MainActivity : AppCompatActivity() {
-    lateinit var checkStart : CheckBox
-    lateinit var rg : RadioGroup
+    lateinit var checkStart : Switch
     lateinit var linearSub : LinearLayout
-    lateinit var btnDone : Button
+    lateinit var rg : RadioGroup
     lateinit var imgV : ImageView
+    lateinit var btnFinish : Button
+    lateinit var btnInit : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        checkStart = findViewById<CheckBox>(R.id.checkStart)
+        checkStart = findViewById<Switch>(R.id.checkStart)
+        linearSub = findViewById<LinearLayout>(R.id.linearSub)
         rg = findViewById<RadioGroup>(R.id.rg)
-        linearSub = findViewById<LinearLayout>(R.id.linerSub)
-        btnDone = findViewById<Button>(R.id.btnDone)
         imgV = findViewById<ImageView>(R.id.imgV)
+        btnFinish = findViewById<Button>(R.id.btnFinish)
+        btnInit = findViewById<Button>(R.id.btnInit)
+        btnFinish.setOnClickListener(btnListener)
+        btnInit.setOnClickListener(btnListener)
+
+        linearSub.visibility = View.INVISIBLE
 
         checkStart.setOnCheckedChangeListener { buttonView, isChecked ->
-         if(isChecked){
-            linearSub.visibility= View.VISIBLE
-         }else{
-             linearSub.visibility=View.INVISIBLE
-         }
-        }
-
-        btnDone.setOnClickListener {
-            when(rg.checkedRadioButtonId){
-                R.id.Dog -> imgV.setImageResource(R.drawable.dog)
-                R.id.Cat -> imgV.setImageResource(R.drawable.cat)
-                R.id.Bird -> imgV.setImageResource(R.drawable.bird)
+            if(isChecked){
+                linearSub.visibility = View.VISIBLE
+            } else{
+                linearSub.visibility = View.INVISIBLE
             }
         }
+
+        rg.setOnCheckedChangeListener { buttonView, isChecked ->
+            when(rg.checkedRadioButtonId){
+                R.id.radioDog -> imgV.setImageResource(R.drawable.dog)
+                R.id.radioCat -> imgV.setImageResource(R.drawable.cat)
+                R.id.radioBird -> imgV.setImageResource(R.drawable.bird)
+            }
+        }
+
+
+
+//        rg.setOnClickListener{
+//            when(rg.checkedRadioButtonId){
+//                R.id.radioPuppy -> imgV.setImageResource(R.drawable.puppy)
+//                R.id.radioKitty -> imgV.setImageResource(R.drawable.kitty)
+//                R.id.radioGyodong -> imgV.setImageResource(R.drawable.gyodong)
+//            }
+//        }
     }
 
     val btnListener = OnClickListener{
